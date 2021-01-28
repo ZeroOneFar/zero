@@ -1,0 +1,12 @@
+# zero
+How to successfully connect to github using ssh 
+first step in CLI type : ls ~/.ssh : this will show if a ssh key already present
+then : ssh-keygen -t rsa -b 4096 -C "your_email@example.com" : this for legacy systems
+     : ssh-keygen -t ed25519 -C "your_email@example.com"  : this for new sytems
+now it will create a ssh file in the system
+to check if ssh agent is active : eval $(ssh-agent -s) : 
+or :eval `ssh-agent -s` : this will show if agent is running
+then : ssh-add ~/.ssh/id_rsa : for legacy and change id_ed25519 for new systems
+goto github and add the ssh key to your github account
+next : ssh -T git@github.com : this will aunthenticate the system with the github
+
